@@ -1,0 +1,28 @@
+{
+    "name": "node-express-template",
+    "version": "1.0.0",
+    "description": "A template for a Nodel.js/Express application",
+    "main": "index.js",
+    "dependencies": {
+        "express": "^4.17.1",
+        "helmet": "^4.4.1"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.7"
+    },
+    "scripts": {
+        "server": "nodemon index.js",
+        "start": "node index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/AmMiRo-Templates/Node-Express-Template.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/AmMiRo-Templates/Node-Express-Template/issues"
+    },
+    "homepage": "https://github.com/AmMiRo-Templates/Node-Express-Template#readme"
+}
