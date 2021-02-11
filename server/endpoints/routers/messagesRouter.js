@@ -32,7 +32,6 @@ router.get("/:id/conversation", async (req, res) => {
     } catch (err) {
         res.status(500).json({
             message: "There was an error getting these messages.",
-            error: err,
         });
     }
 });
@@ -59,7 +58,6 @@ router.post("/", async (req, res) => {
         } catch (err) {
             res.status(500).json({
                 message: "There was a problem adding this message.",
-                error: err,
             });
         }
         // if no text was included with request

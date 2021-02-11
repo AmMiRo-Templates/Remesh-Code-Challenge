@@ -9,7 +9,7 @@ router.get("/", async (req, res) => {
         res.status(200).json(users);
     } catch (error) {
         res.status(500).json({
-            message: `Error getting all users: \n${error}`,
+            message: "Error getting all users",
         });
     }
 });

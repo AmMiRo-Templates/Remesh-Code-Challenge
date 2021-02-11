@@ -14,7 +14,7 @@ const checkConversationId = async (req, res, next) => {
         }
     } catch (error) {
         res.status(500).json({
-            message: `Error locating this conversation: \n${error}`,
+            message: "Error locating this conversation",
         });
     }
 
@@ -29,7 +29,7 @@ router.get("/", async (req, res) => {
         res.status(200).json(conversations);
     } catch (error) {
         res.status(500).json({
-            message: `Error getting all conversations: \n${error}`,
+            message: "Error getting all conversations",
         });
     }
 });
@@ -57,7 +57,6 @@ router.post("/", async (req, res) => {
         } catch (err) {
             res.status(500).json({
                 message: "There was a problem adding this conversation.",
-                error: err,
             });
         }
         // if no title was included with request
