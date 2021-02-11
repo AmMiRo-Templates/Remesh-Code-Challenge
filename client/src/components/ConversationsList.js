@@ -7,12 +7,17 @@ const ConversationsList = () => {
     const dispatch = useDispatch();
 
     const [convoTitle, setConvoTitle] = useState("");
+    const [search, setSearch] = useState("");
 
     const conversations = useSelector((state) => state.conversations);
     const currentUser = useSelector((state) => state.currentUser);
 
     const handleChanges = (e) => {
         setConvoTitle(e.target.value);
+    };
+
+    const handleSearchChanges = (e) => {
+        setSearch(e.target.value);
     };
 
     const handleSubmit = (e) => {
@@ -43,13 +48,33 @@ const ConversationsList = () => {
                 />
                 <button type="submit">Submit</button>
             </form>
+            <form>
+                <label htmlFor="search">search conversations by title:</label>
+                <input
+                    id="search"
+                    type="text"
+                    placeholder=""
+                    name="search"
+                    value={search}
+                    onChange={handleSearchChanges}
+                />
+            </form>
             {conversations.map((conversation) => {
-                return (
-                    <Conversation
-                        conversation={conversation}
-                        key={conversation.id}
-                    />
-                );
+                if (
+                    conversation.title
+                        .toLowerCase()
+                        .includes(search.toLowerCase()) ||
+                    search === ""
+                ) {
+                    return (
+                        <Conversation
+                            conversation={conversation}
+                            key={conversation.id}
+                        />
+                    );
+                } else {
+                    return null;
+                }
             })}
         </div>
     );
