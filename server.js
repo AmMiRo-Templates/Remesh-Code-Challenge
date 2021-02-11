@@ -8,6 +8,8 @@ const server = express();
 // import and use middleware
 const helmet = require("helmet");
 server.use(helmet());
+const cors = require("cors");
+server.use(cors());
 server.use(express.json());
 
 // assign routers

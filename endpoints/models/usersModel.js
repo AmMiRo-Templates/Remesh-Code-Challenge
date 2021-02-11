@@ -11,8 +11,9 @@ const findUserByUsername = (username) => {
 };
 
 // create user
-const createUser = (user) => {
-    return db("users").insert(user);
+const createUser = async (user) => {
+    const id = await db("users").insert(user);
+    return db("users").where({ id }).first();
 };
 
 // change username

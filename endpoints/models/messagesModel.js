@@ -12,8 +12,8 @@ const findMessageById = (id) => {
 
 // create message
 const createMessage = async (message) => {
-    const [id] = await db("messages").insert(message, "id");
-    return findMessageById(id);
+    const id = await db("messages").insert(message);
+    return db("messages").where({ id }).first();
 };
 
 // change message

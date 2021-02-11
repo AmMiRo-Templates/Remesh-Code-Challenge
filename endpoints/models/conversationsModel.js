@@ -12,8 +12,8 @@ const findConversationById = (id) => {
 
 // create conversation
 const createConversation = async (conversation) => {
-    const [id] = await db("conversations").insert(conversation, "id");
-    return findConversationById(id);
+    const id = await db("conversations").insert(conversation);
+    return db("conversations").where({ id }).first();
 };
 
 // change conversation

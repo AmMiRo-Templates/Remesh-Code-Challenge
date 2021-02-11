@@ -12,8 +12,8 @@ const findThoughtById = (id) => {
 
 // create thought
 const createThought = async (thought) => {
-    const [id] = await db("thoughts").insert(thought, "id");
-    return findThoughtById(id);
+    const id = await db("thoughts").insert(thought);
+    return db("thoughts").where({ id }).first();
 };
 
 // change thought

@@ -23,7 +23,7 @@ const checkThoughtId = async (req, res, next) => {
 };
 
 // get all thoughts for message
-router.get("/:id/message", async (rec, res) => {
+router.get("/:id/message", async (req, res) => {
     try {
         const thoughts = await Thoughts.findAllThoughtsForMessage(
             req.params.id

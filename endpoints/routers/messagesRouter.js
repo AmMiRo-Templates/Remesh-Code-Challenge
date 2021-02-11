@@ -23,7 +23,7 @@ const checkMessageId = async (req, res, next) => {
 };
 
 // get all messages for conversation
-router.get("/:id/conversation", async (rec, res) => {
+router.get("/:id/conversation", async (req, res) => {
     try {
         const messages = await Messages.findAllMessagesForConversation(
             req.params.id
