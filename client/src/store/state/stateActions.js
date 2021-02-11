@@ -100,11 +100,11 @@ export const getMessagesForConversation = (conversationId) => async (
             `http://localhost:5000/api/messages/${conversationId}/conversation`
         );
 
-        // console.log("getMessagesForConversation response", res.data);
+        console.log("getMessagesForConversation response", res.data);
 
         dispatch({ type: GETTING_MESSAGES_SUCCESS, payload: res.data });
     } catch (err) {
-        // console.log("getMessagesForConversation error", err);
+        console.log("getMessagesForConversation error", err);
         dispatch({ type: GETTING_MESSAGES_FAILURE, payload: err });
     }
 };
@@ -122,11 +122,11 @@ export const addMessage = (message) => async (dispatch) => {
             message
         );
 
-        // console.log("addMessage response", res.data);
+        console.log("addMessage response", res.data);
 
         dispatch({ type: ADD_MESSAGE_SUCCESS, payload: res.data });
     } catch (err) {
-        // console.log("addMessage error", err);
+        console.log("addMessage error", err);
         dispatch({ type: ADD_MESSAGE_FAILURE });
     }
 };

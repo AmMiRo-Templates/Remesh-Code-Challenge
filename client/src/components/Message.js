@@ -30,6 +30,8 @@ const Message = ({ message }) => {
     const thoughts = useSelector((state) => state.thoughts[message.id]);
     const currentUser = useSelector((state) => state.currentUser);
 
+    const time = new Date(message.time).toString();
+
     const handleChanges = (e) => {
         setThoughtText(e.target.value);
     };
@@ -59,6 +61,7 @@ const Message = ({ message }) => {
     return (
         <MessageDiv>
             <p>{message.text}</p>
+            <p>{time}</p>
             <MessageButton onClick={handleHide}>
                 {hide === true ? "Show More" : "Show Less"}
             </MessageButton>

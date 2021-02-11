@@ -32,6 +32,8 @@ const Conversation = ({ conversation }) => {
     const messages = useSelector((state) => state.messages[conversation.id]);
     const currentUser = useSelector((state) => state.currentUser);
 
+    const time = new Date(conversation.time).toString();
+
     const handleChanges = (e) => {
         setMessageText(e.target.value);
     };
@@ -61,6 +63,7 @@ const Conversation = ({ conversation }) => {
     return (
         <ConvoDiv>
             <p>{conversation.title}</p>
+            <p>{time}</p>
             <ConvoButton onClick={handleHide}>
                 {hide === true ? "Show More" : "Show Less"}
             </ConvoButton>

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const ThoughtP = styled.p`
+const ThoughtDiv = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -11,7 +11,14 @@ const ThoughtP = styled.p`
 `;
 
 const Thought = ({ thought }) => {
-    return <ThoughtP>{thought.text}</ThoughtP>;
+    const time = new Date(thought.time).toString();
+
+    return (
+        <ThoughtDiv>
+            <p>{thought.text}</p>
+            <p>{time}</p>
+        </ThoughtDiv>
+    );
 };
 
 export default Thought;
