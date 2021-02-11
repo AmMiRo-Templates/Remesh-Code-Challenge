@@ -21,7 +21,7 @@
     "scripts": {
         "devStart": "nodemon index.js",
         "start": "node index.js",
-        "test": "cross-env DB_ENVIRONMENT=testing jest --watch"
+        "test": "cross-env DB_ENVIRONMENT=testing jest --watchAll"
     },
     "repository": {
         "type": "git",
